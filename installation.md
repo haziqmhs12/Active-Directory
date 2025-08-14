@@ -31,6 +31,11 @@ After installation, it's good practice to rename the computer from its default, 
 2. Find and click **"Rename this PC"**
 3. Change the name to something like `WinServer`. The PC will need to restart
 
+<div align="center">
+   
+![Renaming PC](images/Renaming%20PC.jpg)
+</div>
+
 ### 3. Performance Settings
 
 To ensure the VM runs smoothly, the performance settings were adjusted.
@@ -38,6 +43,11 @@ To ensure the VM runs smoothly, the performance settings were adjusted.
 1. In the same **"Properties"** page, scroll down and find **"Advanced system settings"**
 2. In the new window, go to the **"Advanced"** tab, find the **"Performance"** section, and click **"Settings"**
 3. Choose **"Adjust for best performance"**
+
+<div align="center">
+   
+![Performance Settings](images/Performance%20setting.jpg)
+</div>
 
 ### 4. Static IP Configuration
 
@@ -48,6 +58,11 @@ A server should always have a static IP address.
 3. Select **"Internet Protocol Version 4 (TCP/IPv4)"** and click **"Properties"**
 4. Manually enter the IP address, Subnet mask, Default gateway, and DNS server address
 5. Run `ipconfig` in the Command Prompt to verify the settings
+
+<div align="center">
+   
+![Set Static IP](images/Set%20Static%20IP.jpg)
+</div>
 
 ## 🖥️ Active Directory & DNS Installation
 
@@ -61,6 +76,11 @@ Before installing AD, ensure the server has a strong administrator password and 
 4. Select **"Active Directory Domain Services"** and **"DNS Server"**. DNS is crucial for AD to function correctly
 5. Click **"Next"** and proceed with the default settings to install
 
+<div align="center">
+   
+![Role and Features](images/Role%20and%20Features.jpg)
+</div>
+
 ### 2. Promoting to Domain Controller
 
 After the roles are installed, the standalone server needs to be promoted to a domain controller. This process creates the Active Directory database, configures the domain, and integrates DNS.
@@ -69,6 +89,11 @@ After the roles are installed, the standalone server needs to be promoted to a d
 2. Select **"Add a new forest"** and specify a **"Root domain name"** (e.g., `lab.local`)
 3. Set a **DSRM (Directory Services Restore Mode)** password. This is a special password used for repairing or restoring AD
 4. Complete the wizard, and the server will reboot
+
+<div align="center">
+   
+![DC Promotion](images/DC%20Promotion.jpg)
+</div>
 
 ### 3. DNS Verification
 
@@ -81,3 +106,8 @@ After the reboot, it's important to verify that DNS is working.
    ```
 
 A successful lookup of both will confirm that AD is resolving your local domain and that you have internet connectivity.
+
+<div align="center">
+   
+![DNS Testing](images/DNS%20testing.png)
+</div>
